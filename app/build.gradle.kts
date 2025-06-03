@@ -66,4 +66,16 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // TensorFlow Lite
+    implementation("org.tensorflow:tensorflow-lite:2.14.0")
+    implementation("org.tensorflow:tensorflow-lite-support:0.4.4")
+    implementation("org.tensorflow:tensorflow-lite-metadata:0.4.4")
+    implementation("be.tarsos.dsp:core:2.5")
+    implementation("be.tarsos.dsp:jvm:2.5")
+
+    // TarsosDSP
+    implementation("com.github.JorenSix:TarsosDSP:2.5")
+    implementation("be.tarsos.dsp:android:2.5") // Android 전용 모듈
+
 }
