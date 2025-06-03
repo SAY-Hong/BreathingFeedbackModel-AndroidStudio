@@ -1,9 +1,12 @@
 package kr.ac.duksung.breathingfeedbackmodel
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -13,7 +16,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import kr.ac.duksung.breathingfeedbackmodel.ui.theme.BreathingFeedbackModelTheme
 
+
 class MainActivity : ComponentActivity() {
+    private var recorder: AudioRecorder? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,6 +33,17 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
+        setContentView(R.layout.activity_main)
+
+        val startBtn: Button = findViewById(R.id.startButton)
+        recorder = AudioRecorder(this)
+
+        startBtn.setOnClickListener { v: View? -> recorder!!.startRecording() }
+    }
+
+    companion object {
+        private const val PERMISSION_REQUEST_CODE = 1001
     }
 }
 
@@ -45,3 +62,4 @@ fun GreetingPreview() {
         Greeting("Android")
     }
 }
+

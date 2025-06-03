@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "kr.ac.duksung.breathingfeedbackmodel"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "kr.ac.duksung.breathingfeedbackmodel"
         minSdk = 26
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -50,7 +50,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -59,6 +58,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,4 +67,15 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // TensorFlow Lite
+    implementation("org.tensorflow:tensorflow-lite:2.11.0")
+    implementation("org.tensorflow:tensorflow-lite-select-tf-ops:2.11.0")
+    implementation("org.tensorflow:tensorflow-lite-support:0.3.1")
+    implementation("be.tarsos.dsp:core:2.5")
+
+//    // TarsosDSP
+//    implementation("com.github.JorenSix:TarsosDSP:2.5")
+//    implementation("be.tarsos.dsp:android:2.5") // Android 전용 모듈
+
 }
