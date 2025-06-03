@@ -81,7 +81,7 @@ class AudioRecorder(private val context: Context) {
 
     @Throws(IOException::class)
     private fun processAudio(audioData: FloatArray) {
-        val features: FeatureSet = AudioProcessor.extractFeatures(audioData)
+        val features: AudioProcessor.FeatureSet = AudioProcessor.extractFeatures(audioData)
 
         //        String prediction = ModelInterpreter.runModel1(context, features);
         val bp = intArrayOf(2, 1) // 예시
