@@ -1,4 +1,4 @@
-package kr.ac.duksung.breathingfeedbackmodel.ui.theme
+package kr.ac.duksung.breathingfeedbackmodel
 
 import be.tarsos.dsp.AudioDispatcher
 import be.tarsos.dsp.AudioEvent
