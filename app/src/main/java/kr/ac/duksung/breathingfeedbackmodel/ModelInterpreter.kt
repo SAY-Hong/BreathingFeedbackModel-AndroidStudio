@@ -9,13 +9,15 @@ import java.io.IOException
 object ModelInterpreter {
     private const val TAG = "ModelInterpreter"
     @Throws(IOException::class)
-    fun runModel2(context: Context?, features: FeatureSet, bpm: Int, bp: IntArray): String {
+    fun runModel2(context: Context?, features: AudioProcessor.FeatureSet, bpm: Int, bp: IntArray): String {
         Log.d(kr.ac.duksung.breathingfeedbackmodel.ModelInterpreter.TAG, "Model 2 시작")
+
         val tflite = Interpreter(
             FileUtil.loadModelFile(
                 context!!, "model2_lite_v1.tflite"
             )
         )
+
         Log.d(kr.ac.duksung.breathingfeedbackmodel.ModelInterpreter.TAG, "Model 2 로드 완료")
 
         // --------------------------
